@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const winston = require('winston');
 
 const app = express();
 
@@ -10,6 +11,6 @@ app.get('/', (request, response) => {
 });
 
 app.listen(3000, () => {
-    console.log('Application listens on port 3000');
+    winston.info('Application listens on port 3000');
 });
 
