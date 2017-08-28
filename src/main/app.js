@@ -12,11 +12,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.get('/', (request, response) => {
-    response.send('Test response');
+    response.send('Test response using Babel');
 });
 
 app.post('/', (request, response) => {
-    response.send('Test response');
+    response.send('Test response using Babel');
 });
 
 app.listen(3000, () => {
