@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "compile": "node_modules/babel-cli/bin/babel.js src/main --out-dir public",
-    "start": "node public/app"
+    "start": "node public/app",
+    "test": "mocha --opts .mocharc",
+    "test:watch": "mocha --opts .mocharc --reporter min --watch"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
@@ -20,6 +22,10 @@
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
-    "babel-preset-stage-1": "^6.24.1"
+    "babel-preset-stage-1": "^6.24.1",
+    "chai": "^4.1.1",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.5.0",
+    "rewire": "^2.5.2"
   }
 }

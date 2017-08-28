@@ -32,3 +32,5 @@ const startApplication = (app) => {
 initializeMiddleware(app);
 initializeRoutes(app);
 startApplication(app);
+
+export default app;
