@@ -13,10 +13,11 @@ router.use(function(request, response, next) {
 
 
 router.use(function(error, request, response, next) {
-    response.statusCode = error.status || 500;
-    response.json({
-        error: error.message
-    });
+    response
+        .status(error.status || 500)
+        .json({
+            error: error.message
+        });
 });
 
 export default router;
