@@ -4,22 +4,32 @@ const winston = require('winston');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
+import indexRoutes from './routes/index.routes';
+import errorRoutes from './routes/error.routes';
+
 const app = express();
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+initializeMiddleware(app);
+initializeRoutes(app);
+startApplication(app);
 
-app.get('/', (request, response) => {
-    response.send('Test response using Babel');
-});
+const initializeMiddleware = (app) => {
+    app.use(morgan('dev'));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(cookieParser());
+};
 
-app.post('/', (request, response) => {
-    response.send('Test response using Babel');
-});
+const initializeRoutes = app => {
+    app.use(indexRoutes);
+    // TODO: Initialize application routes
+    app.use(errorRoutes);
+};
 
-app.listen(3000, () => {
-    winston.info('Application listens on port 3000');
-});
+const startApplication = (app) => {
+    const port = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        winston.info(`Server listens on port ${port}`);
+    });
+};
 
