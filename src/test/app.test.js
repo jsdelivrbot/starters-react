@@ -20,3 +20,18 @@ describe('GET /', () => {
     });
 
 });
+
+describe('GET /nonexistingpath', () => {
+
+    it('Should return status 404 and message "Page Not Found"', (done) => {
+        chai.request(app)
+            .get('/nonexistingpath')
+            .end((error, response) => {
+                expect(response).to.have.status(404);
+                expect(response).to.be.json;
+                expect(response.body).to.have.property('error', 'Page Not Found');
+                done();
+            });
+    });
+
+});

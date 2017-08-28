@@ -13,10 +13,9 @@ router.use(function(request, response, next) {
 
 
 router.use(function(error, request, response, next) {
-    response.status = error.response || 500;
+    response.statusCode = error.status || 500;
     response.json({
-        status,
-        message: error.message
+        error: error.message
     });
 });
 
