@@ -9,10 +9,6 @@ import errorRoutes from './routes/error.routes';
 
 const app = express();
 
-initializeMiddleware(app);
-initializeRoutes(app);
-startApplication(app);
-
 const initializeMiddleware = (app) => {
     app.use(morgan('dev'));
     app.use(bodyParser.json());
@@ -28,8 +24,11 @@ const initializeRoutes = app => {
 
 const startApplication = (app) => {
     const port = process.env.PORT || 3000;
-    app.listen(PORT, () => {
+    app.listen(port, () => {
         winston.info(`Server listens on port ${port}`);
     });
 };
 
+initializeMiddleware(app);
+initializeRoutes(app);
+startApplication(app);
