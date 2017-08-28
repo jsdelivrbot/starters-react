@@ -3,15 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "compile": "node_modules/babel-cli/bin/babel.js src/main --out-dir public",
+    "compile": "node_modules/babel-cli/bin/babel.js src/main --out-dir public --copy-files",
     "start": "node public/app",
     "test": "mocha --opts .mocharc",
     "test:watch": "mocha --opts .mocharc --reporter min --watch"
   },
   "dependencies": {
+    "babel-plugin-module-resolver": "^2.7.1",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "express": "~4.15.2",
+    "fs": "0.0.1-security",
+    "js-yaml": "^3.9.1",
+    "lodash": "^4.17.4",
     "morgan": "^1.8.2",
     "path": "^0.12.7",
     "winston": "^2.3.1"

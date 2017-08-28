@@ -1,4 +1,13 @@
 {
-  "presets": [ "es2015", "es2016", "stage-1" ],
-  "plugins": [ "transform-es2015-arrow-functions" ]
+  "presets": [
+    "es2015",
+    "es2016",
+    "stage-1"
+  ],
+  "plugins": [
+    "transform-es2015-arrow-functions",
+    [ "module-resolver", {
+
+    }]
+  ]
 }
