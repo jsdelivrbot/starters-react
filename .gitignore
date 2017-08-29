@@ -3,4 +3,5 @@
 
 node_modules
 
-public
+public/dist/*.js
+public/dist/*.json

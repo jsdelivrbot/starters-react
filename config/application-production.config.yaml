@@ -1,0 +1,5 @@
+morgan:
+  format: short
+
+webpack:
+  devtool: false
