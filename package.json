@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start-dev": "nodemon app.js"
+    "compile": "webpack",
+    "start-dev": "npm run compile && nodemon app.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
