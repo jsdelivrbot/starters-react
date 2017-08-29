@@ -3,11 +3,4 @@ server:
 
 webpack:
   output:
-    filename: 'bundle.js'
     chunkFilename: '[name].[chunkhash].js'
-  devtool: 'source-map'
-
-build:
-  compress: true
-  secure: true
-  userHMR: false

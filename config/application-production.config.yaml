@@ -2,4 +2,11 @@ morgan:
   format: short
 
 webpack:
+  output:
+    filename: 'bundle.min.js'
   devtool: false
+
+build:
+  compress: true
+  secure: true
+  userHMR: false

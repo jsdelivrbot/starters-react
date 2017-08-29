@@ -3,8 +3,11 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const _ = require('lodash');
 const winston = require('winston');
+const dotenv = require('dotenv');
 
-const getProfile = () => process.env.PROFILE || 'development'; //'production';
+dotenv.config();
+
+const getProfile = () => process.env.PROFILE || 'production'; //'development';
 
 const getApplicationConfigFileName = (profile) => _.template('application<%= profile %>.config.yaml')({profile: !profile ? '' : `-${profile}`});
 const getApplicationConfigPath = (configPath, profile) => {
@@ -43,7 +46,7 @@ const initializeBabelConfig = () => ({
 });
 
 const PROFILE_CONFIG = { profile: getProfile() };
-const APPLICATION_CONFIG = initializeApplicationConfiguration();
+const APPLICATION_CONFIG = initializeApplicationConfiguration(PROFILE_CONFIG.profile);
 const PATHS_CONFIG = initializePathsConfig();
 const BABEL_CONFIG = initializeBabelConfig();
 

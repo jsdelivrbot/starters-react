@@ -1,2 +1,12 @@
 morgan:
   format: combined
+
+webpack:
+  output:
+    filename: 'bundle.js'
+  devtool: 'source-map'
+
+build:
+  compress: false
+  secure: false
+  userHMR: true
