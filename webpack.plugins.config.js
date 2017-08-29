@@ -5,25 +5,21 @@ const DefinePlugin = require('webpack').DefinePlugin;
 const AssetsPlugin = require('assets-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const path = require('path');
+const config = require('./config');
 
-const getProfile = () => process.env.PROFILE || 'production';
-
-const PROFILE = getProfile();
-const PUBLIC_PATH = path.resolve(__dirname, 'public');
-const DIST_PATH = path.resolve(__dirname, 'dist');
 
 const initializeCleanPlugin = () => {
-    const pathsToClean = [ 'dist', '*.html' ];
-    const cleanOptions = { root: PUBLIC_PATH };
+    const pathsToClean = [ 'dist' ];
+    const cleanOptions = { root: config.paths.public };
     return new CleanPlugin(pathsToClean, cleanOptions);
 };
 
 const initializeDefinePlugin = () => new DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify(PROFILE)
+    'process.env.NODE_ENV': JSON.stringify(config.profile)
 });
 
 const initializeAssetsPlugin = () => new AssetsPlugin({
-    path: DIST_PATH,
+    path: config.paths.dist,
     file: 'assets.json',
     prettyPrint: true
 });

@@ -4,7 +4,7 @@ const yaml = require('js-yaml');
 const _ = require('lodash');
 const winston = require('winston');
 
-const getProfile = () => process.env.PROFILE || 'production';
+const getProfile = () => process.env.PROFILE || 'development'; //'production';
 
 const getApplicationConfigFileName = (profile) => _.template('application<%= profile %>.config.yaml')({profile: !profile ? '' : `-${profile}`});
 const getApplicationConfigPath = (configPath, profile) => {
@@ -36,7 +36,10 @@ const initializePathsConfig = () => ({
 });
 
 const initializeBabelConfig = () => ({
-    babel: JSON.parse(readFile('.babelrc'))
+        babel: _.merge(
+            {babelrc: false},
+            JSON.parse(readFile('.babelrc'))
+        )
 });
 
 const PROFILE_CONFIG = { profile: getProfile() };

@@ -11,7 +11,7 @@ const getDistAbsolutePublicPath = () => `/${path.relative(config.paths.dist, con
 const WEBPACK_CONFIG = {
 
     context: config.paths.main,
-    entry: [ 'app.jsx' ],
+    entry: [ './app.jsx' ],
 
     resolve: {
         extensions: [ '.webpack.js', 'web.js', '.js', '.jsx' ]
@@ -20,7 +20,7 @@ const WEBPACK_CONFIG = {
     output: {
         path: config.paths.dist,
         filename: config.webpack.output.filename,
-        publicPath: getDistAbsolutePublicPath(),
+        publicPath: '/dist/',
         chunkFilename: config.webpack.output.chunkFilename
     },
 
