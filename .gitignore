@@ -5,6 +5,5 @@ node_modules
 
 public/dist/*.js
 public/dist/*.json
-public/*.html
 
 .env
