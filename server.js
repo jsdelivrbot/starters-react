@@ -1,8 +1,11 @@
 const express = require('express');
 const path = require('path');
+const morgan = require('morgan');
+const config = require('./config');
 
 const app = express();
 
+app.use(morgan(config.morgan.format));
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.listen(8080);
