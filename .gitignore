@@ -3,8 +3,7 @@
 
 node_modules
 
-public/dist/*.js
-public/dist/*.json
+public/dist/*
 public/*.html
 
 .env
