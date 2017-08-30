@@ -15,8 +15,7 @@ class IndexComponent extends Component {
 
     render = () => {
         return <div>
-            <Link to='/path'>Go to path</Link>
-            { this.props.message }
+            <Link to='/'>Go to index page</Link>
         </div>;
     }
 

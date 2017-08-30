@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import IndexComponent from './components/index';
 import { Provider } from 'react-redux';
-import store  from './core/store';
+
+import store from './core/store';
+import Router from './core/router';
 
 ReactDom.render(
     <Provider store={store}>
-        <IndexComponent />
+        <Router />
     </Provider>,
     document.getElementById('container')
 );

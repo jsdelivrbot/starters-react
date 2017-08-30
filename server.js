@@ -9,6 +9,10 @@ const app = express();
 app.use(morgan(config.morgan.format));
 app.use(express.static(path.resolve(__dirname, 'public')));
 
+app.get('*', (request, response) => {
+    response.sendFile('index.html', { root : config.paths.public });
+});
+
 app.listen(config.port, () => {
     winston.info(`Server is listening on port ${config.port}`);
 });
