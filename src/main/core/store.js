@@ -9,8 +9,13 @@ const applicationReducers = combineReducers({
     index: IndexReducer
 });
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 const store = createStore(
-    applicationReducers
+    applicationReducers,
+    composeEnhancers(
+        applyMiddleware()
+    )
 );
 
 export default store;
