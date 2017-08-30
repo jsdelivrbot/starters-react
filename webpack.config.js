@@ -24,7 +24,11 @@ const WEBPACK_CONFIG = {
         chunkFilename: config.webpack.output.chunkFilename
     },
 
-    devtool: config.webpack.devtool
+    devtool: config.webpack.devtool,
+
+    node: {
+        fs: 'empty'
+    }
 
 };
 

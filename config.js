@@ -7,6 +7,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
+const getPort = () => process.env.PORT || 3000; //'development';
 const getProfile = () => process.env.PROFILE || 'production'; //'development';
 
 const getApplicationConfigFileName = (profile) => _.template('application<%= profile %>.config.yaml')({profile: !profile ? '' : `-${profile}`});
@@ -45,12 +46,14 @@ const initializeBabelConfig = () => ({
         )
 });
 
+const PORT_CONFIG = { port: getPort() };
 const PROFILE_CONFIG = { profile: getProfile() };
 const APPLICATION_CONFIG = initializeApplicationConfiguration(PROFILE_CONFIG.profile);
 const PATHS_CONFIG = initializePathsConfig();
 const BABEL_CONFIG = initializeBabelConfig();
 
 const CONFIG = _.merge({},
+    PORT_CONFIG,
     PROFILE_CONFIG,
     APPLICATION_CONFIG,
     PATHS_CONFIG,

@@ -7,9 +7,10 @@ COPY . .
 
 RUN npm install
 
+ENV PORT=8080
 ENV PROFILE=development
 
-EXPOSE 8080/tcp
+EXPOSE ${PORT}/tcp
 
 ENTRYPOINT [ "npm" ]
 CMD [ "run", "start" ]

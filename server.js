@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const winston = require('winston');
 const config = require('./config');
 
 const app = express();
@@ -8,4 +9,6 @@ const app = express();
 app.use(morgan(config.morgan.format));
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-app.listen(8080);
+app.listen(config.port, () => {
+    winston.info(`Server is listening on port ${config.port}`);
+});

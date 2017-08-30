@@ -1,9 +1,9 @@
 const config = require('./config');
 
 const initializeBabelLoader = () => ({
-    test: /\.js[x]$/,
+    test: /\.jsx?$/,
     include: [ config.paths.main ],
-    exclude: /node_modules|bower_components/,
+    exclude: [ /node_modules/ ],
     loader: `babel-loader?${JSON.stringify(config.babel)}`
 });
 

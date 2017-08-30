@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import IndexComponent from './components/index';
+import { Provider } from 'react-redux';
+import store  from './core/store';
 
 ReactDom.render(
-    <h1>Hello World, Totally new 2!</h1>,
+    <Provider store={store}>
+        <IndexComponent />
+    </Provider>,
     document.getElementById('container')
 );
