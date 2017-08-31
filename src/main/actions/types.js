@@ -1,1 +1,4 @@
 export const INDEX_ACTION = 'INDEX_ACTION';
+
+export const LOGIN_ACTION = 'LOGIN_ACTION';
+export const LOGOUT_ACTION = 'LOGIN_ACTION';

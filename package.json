@@ -8,6 +8,7 @@
     "start:watch": "nodemon --ext js,jsx,css --ignore node_modules/ --ignore public/ --exec 'npm run start'"
   },
   "dependencies": {
+    "autoprefixer": "^7.1.3",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
@@ -18,12 +19,15 @@
     "lodash": "^4.17.4",
     "morgan": "^1.8.2",
     "path": "^0.12.7",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
+    "redux-form": "^7.0.3",
     "redux-persist": "^4.9.1",
     "redux-thunk": "^2.2.0",
     "winston": "^2.3.1"
@@ -40,10 +44,13 @@
     "chai": "^4.1.1",
     "chai-http": "^3.0.0",
     "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
     "expect": "^1.20.2",
     "mocha": "^3.5.0",
     "nodemon": "^1.11.0",
+    "postcss-loader": "^2.0.6",
     "rewire": "^2.5.2",
+    "style-loader": "^0.18.2",
     "supertest": "^3.0.0",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"

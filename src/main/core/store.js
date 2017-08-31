@@ -4,11 +4,13 @@
 import { combineReducers, applyMiddleware, createStore, compose } from 'redux';
 import { persistStore, autoRehydrate } from 'redux-persist';
 import thunk from 'redux-thunk';
+import { reducer as FormReducer } from 'redux-form';
 
 import IndexReducer from '../reducers/index.reducer';
 
 const applicationReducers = combineReducers({
-    index: IndexReducer
+    index: IndexReducer,
+    form: FormReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import LoginComponent from './login/login';
 import * as actions from '../actions/index';
+import styles from './index.pcss';
 
 class IndexComponent extends Component {
 
@@ -15,7 +17,8 @@ class IndexComponent extends Component {
 
     render = () => {
         return <div>
-            <Link to='/path'>Go to path</Link>
+            <Link to='/path' className="red-font">Go to path</Link>
+            <LoginComponent />
             { this.props.message }
         </div>;
     }
